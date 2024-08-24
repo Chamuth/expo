@@ -2,7 +2,7 @@ import 'expo/build/Expo.fx';
 import * as React from 'react';
 import { AppRegistry, Platform } from 'react-native';
 import { createRoot } from './createRoot';
-export default function registerRootComponent(component) {
+export default function registerRootComponent(component, carplay) {
     let qualifiedComponent = component;
     if (process.env.NODE_ENV !== 'production') {
         const { withDevTools } = require('./withDevTools');
@@ -10,6 +10,8 @@ export default function registerRootComponent(component) {
     }
     if (Platform.OS !== 'web') {
         AppRegistry.registerComponent('main', () => qualifiedComponent);
+        if (carplay)
+            AppRegistry.registerRunnable('AndroidAuto', carplay);
     }
     else if (
     // Skip querying the DOM if we're in a Node.js environment.

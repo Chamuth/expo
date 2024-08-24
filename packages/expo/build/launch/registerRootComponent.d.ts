@@ -10,6 +10,6 @@ type InitialProps = {
     shellManifestUrl?: string;
     [key: string]: any;
 };
-export default function registerRootComponent<P extends InitialProps>(component: React.ComponentType<P>): void;
+export default function registerRootComponent<P extends InitialProps>(component: React.ComponentType<P>, carplay?: () => void): void;
 export {};
 //# sourceMappingURL=registerRootComponent.d.ts.map

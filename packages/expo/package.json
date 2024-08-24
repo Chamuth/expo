@@ -1,10 +1,13 @@
 {
-  "name": "expo",
+  "name": "@chamuth/expo",
   "version": "49.0.23",
   "description": "The Expo SDK",
   "main": "build/Expo.js",
   "module": "build/Expo.js",
   "types": "build/Expo.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/chamuth"
+  },
   "sideEffects": [
     "*.fx.js",
     "*.fx.web.js"
@@ -44,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/expo/expo.git",
+    "url": "https://github.com/Chamuth/expo.git",
     "directory": "packages/expo"
   },
   "keywords": [

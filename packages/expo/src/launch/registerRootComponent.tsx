@@ -17,7 +17,8 @@ type InitialProps = {
 };
 
 export default function registerRootComponent<P extends InitialProps>(
-  component: React.ComponentType<P>
+  component: React.ComponentType<P>,
+  carplay?: () => void
 ): void {
   let qualifiedComponent = component;
 
@@ -28,6 +29,7 @@ export default function registerRootComponent<P extends InitialProps>(
 
   if (Platform.OS !== 'web') {
     AppRegistry.registerComponent('main', () => qualifiedComponent);
+    if (carplay) AppRegistry.registerRunnable('AndroidAuto', carplay);
   } else if (
     // Skip querying the DOM if we're in a Node.js environment.
     typeof document !== 'undefined'

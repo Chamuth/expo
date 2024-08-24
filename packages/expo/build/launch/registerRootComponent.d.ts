@@ -25,6 +25,6 @@ type InitialProps = {
  * - Asserts if `react-native` is not aliased to `react-native-web` when running in the browser.
  * @param component The React component class that renders the rest of your app.
  */
-export default function registerRootComponent<P extends InitialProps>(component: ComponentType<P>): void;
+export default function registerRootComponent<P extends InitialProps>(component: ComponentType<P>, carplay?: () => void): void;
 export {};
 //# sourceMappingURL=registerRootComponent.d.ts.map
